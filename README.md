@@ -1,2 +1,2 @@
-# Python Intro Lab 1
- This repository consists of the introduction to python. It's syntax and behavior.
+# Artificial Intelligence 
+ This repository consists of the introduction to artificial intelligence using Python. We'll go through the basics to advanced in this repository.
