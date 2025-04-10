@@ -140,23 +140,29 @@ print(f"Total Letters are {letter}")
 # 14)
 # Check the Validity of the password
 import re
-def valid_password(password):
 
-    if not (6 <= len(password) <=16):
-        return False
-    if not re.search(r"[a-z]",password):
-        return False
-    if not re.search(r"[A-Z]",password):
-        return False
-    if not re.search(r"\d",password):
-        return False
-    if not re.search(r"[$#@]",password):
-        return False
+def validate_password(password):
+  
+    if len(password) < 6 or len(password) > 16:
+        return "Password must be between 6 and 16 characters long."
+
     
-    return True
+    if not re.search("[a-z]", password):#The re.search() function in Python is used to search for a pattern (specified as a regular expression) in a string. 
+        return "Password must contain at least one lowercase letter."
 
-password = input("Enter the password: ")
-if valid_password(password):
-    print("Valid Password")
-else:
-    print("InValid Password")
+  
+    if not re.search("[A-Z]", password):
+        return "Password must contain at least one uppercase letter."
+
+   
+    if not re.search("[0-9]", password):
+        return "Password must contain at least one digit."
+
+   
+    if not re.search("[$#@]", password):
+        return "Password must contain at least one special character from [$#@]."
+
+    return "Password is valid."
+
+password = input("Enter your password: ")
+print(validate_password(password))
